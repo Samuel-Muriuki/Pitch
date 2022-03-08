@@ -40,11 +40,11 @@ def create_app(config_name):
     # confiure UploadSet
     configure_uploads(app,photos)
 
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    # app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+    # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     
 
-    with app.app_context():
-        db.create_all()
+    # with app.app_context():
+    #     db.create_all()
 
     return app
