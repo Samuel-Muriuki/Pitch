@@ -73,3 +73,21 @@ class Pitch(db.Model):
             pitch_count += 1
 
         return pitch_count
+
+class Comment(db.Model):
+    __tablename__ = 'comments'
+
+    id = db.Column(db.Integer,primary_key = True)
+    comment = db.Column(db.String(500))
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+    pitch = db.Column(db.Integer,db.ForeignKey("pitch.id"))
+
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+        
+
+    @classmethod
+    def get_comments(cls,pitch):
+        comments = Comment.query.filter_by(pitch_id=pitch).all()
+        return comments
