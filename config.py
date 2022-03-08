@@ -6,7 +6,7 @@ class Config:
     '''
     # SECRET_KEY = "906gbg5c64346xrs43535x46u9h687b8767"
     # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Vanilla@localhost/pitchMain'
-    # SQLALCHEMY_TRACK_MODIFICATIONS = False    
+    SQLALCHEMY_TRACK_MODIFICATIONS = False    
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
     #  email configurations
@@ -25,7 +25,7 @@ class Config:
 class ProdConfig(Config):
     # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Vanilla@localhost/pitchMain'
     # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    SQLALCHEMY_DATABASE_URI = "postgres://hpqntkpksogywl:93d2d7c29ed3ba79f9a4f76e559c00f73f07c7868d40d81ebbc0b1a02ffce0ac@ec2-54-83-21-198.compute-1.amazonaws.com:5432/d34i621dqbn656"
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class DevConfig(Config):
     DEBUG = True
