@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{%import 'macros.html' as macro%}
+
+{% block content %}
+<div class="container">
+    <div class="row container">
+        <!-- display the  username-->
+        <h2>{{user.username| capitalize}}</h2>
+        <hr>
+        <!--Display profile photo-->
+        <div class="col-md-3">
+            <div class="thumbnail">
+                {% if user.profile_pic_path %}
+                <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="profile-pic" class="img-circle">
+                {%else%}
+                <p>No profile picture yet!!!</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p>
+                    Name: {{user.firstname}} {{user.lastname}} 
+                </p>
+                <p> 
+                    No of piches made: {{pitch_count}}
+                </p>
+            </div>
+            <!-- <div class="row"> -->
+            <div class="col-md-4">
+                <h2>Your Pitches</h2>
+                <hr>
+                <span class="card">{{macro.displayPitch(pitch)}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
