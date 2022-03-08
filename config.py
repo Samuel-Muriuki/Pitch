@@ -5,7 +5,7 @@ class Config:
     Configuration class.
     '''
     SECRET_KEY = "906gbg5c64346xrs43535x46u9h687b8767"
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Vanilla@localhost/pitchDummy'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Vanilla@localhost/pitchMain'
     SQLALCHEMY_TRACK_MODIFICATIONS = False    
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
@@ -23,14 +23,14 @@ class Config:
         pass
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Vanilla@localhost/pitchDummy'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Vanilla@localhost/pitchMain'
 
 class DevConfig(Config):
     DEBUG = True
 
 class TestConfig(Config):
 
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Vanilla@localhost/pitchDummy'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Vanilla@localhost/pitchMain'
 
     
 config_options = {
