@@ -28,3 +28,7 @@ SQLAlchemy==1.3.23
 visitor==0.1.3
 Werkzeug==2.0.3
 WTForms==3.0.1
+
+
+# heroku logs | grep Scale
+# heroku ps:scale web=1
