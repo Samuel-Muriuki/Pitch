@@ -6,7 +6,7 @@
 
 The Pitch is a web application that displays a list of various news sources. On choosing a pitch category, it will preview that category and give you the option to create another pitch.
 
-You can view the site at:[Heroku](https://pitcher-1.herokuapp.com/)
+You can view the site at:[Heroku](https://pitcher-samm.herokuapp.com/)
 
 ## User Stories
 
